@@ -1,0 +1,98 @@
+.goods-list {
+  padding: 20px 40px;
+  .cart-change-loading {
+    text-align: center;
+    .ant-spin {
+      position: fixed;
+      top: 50%;
+      height: 100vh;
+      color: rgba(0, 0, 0, 0.65)
+    }
+  }
+  .spin {
+    position: fixed;
+    top: 40%;
+    height: 100vh;
+  }
+  .my-gallery-class {
+    flex: 1;
+    margin-bottom: 10px;
+  }
+  .goods-item {
+    font-size: 12px;
+    width: 200px;
+    border-radius: 5px;
+    .ant-card-body {
+      padding: 0 5px;
+    }
+    &-content {
+      .photo {
+        width: 100%;
+      }
+      .goods-info {
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        .title {
+          font-size: 14px;
+          color: #444;
+        }
+        .money {
+          font-size: 15px;
+          color: #ea6f5a;
+          font-weight: 700;
+        }
+        .number {
+          display: flex;
+          justify-content: space-between;
+        }
+        .line {
+          .ant-input-number{
+            width: 60px;
+          }
+          .cart {
+            position: relative;
+            padding: 0 4px 0 30px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-weight: 600;
+            font-size: 10px;
+            cursor: pointer;
+            &-img {
+              width: 15px;
+              margin-left: 3px;
+            }
+            .ant-input-number {
+              flex: 1;
+            }
+            .add.ant-btn{
+              height: auto;
+              padding: 0;
+              margin-left: 4px;
+            }
+            .cart-num {
+              position: absolute;
+              right: -6px;
+              top: -3px;
+              background-color: #f30303;
+              color: #fff;
+              width: 15px;
+              height: 15px;
+              border-radius: 50%;
+              vertical-align: top;
+              text-align: center;
+              .inner {
+                display: block;
+                color: '#fff';
+                height: 15px;
+                line-height: 15px;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

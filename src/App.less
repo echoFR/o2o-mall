@@ -1,0 +1,85 @@
+.o2o-mall {
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   &-content {
+     flex: 1;
+     padding: 20px;
+   }
+  .gutter {
+    display: inline-block;
+    background: black;
+    width: 1px;
+    height: 20px;
+  }
+  .footer {
+    background-color: #4dab8c;
+    width: 100%;
+    &-content {
+      padding: 30px 145px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      &-item {
+        ul {
+          li {
+            margin-bottom: 16px;
+            a {
+              text-decoration: none;
+              color: rgba(255, 255, 255, .65);
+              transition: color .3s;  
+            }
+            a:hover {
+              text-decoration: none;
+              color: rgba(255, 255, 255, .35);
+            }
+          }
+          li.title {
+            margin-top: 7px;
+            margin-bottom: 40px;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 500;
+            a {
+              color: rgba(255, 255, 255, 1);
+            }
+            a:hover {
+              color: rgba(255, 255, 255, .7);
+            }
+          }
+        }
+      }
+      .logo {
+        width: 50px;
+      }
+    }
+  }
+  .cart-footer{
+    border-top: 1px solid #f0f0f0;
+    background-color: #fff;
+    position: sticky;
+    bottom: 0;
+    padding: 15px 0;
+    margin-top: 30px;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    .title {
+      flex: 1;
+      cursor: pointer;
+      text-align: end;
+      padding-right: 40px;
+    }
+    .title:hover {
+      color: #f30303;
+      transition: ease-in-out 400ms;
+    }
+    .checkout-btn {
+      margin-right: 30px;
+    }
+    .cart-img {
+      width: 40px;
+      margin-right: 3px;
+    }
+  }
+}

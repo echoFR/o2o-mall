@@ -1,0 +1,55 @@
+.header {
+  font-size: 14px;
+  height: 64px;
+  display: flex;
+  padding: 5px 50px;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 500;
+  &-logo {
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    .link {
+      .img {
+        width: 35px;
+        margin-right: 10px;
+      }
+    }
+  }
+  &-list {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px;
+    ul {
+      display: flex;
+      margin: 0;
+      padding: 0 20px;
+      li {
+        padding: 0 20px;
+        transition: 0.2s color ease;
+        cursor: pointer;
+        a {
+          padding: 0 10px;
+          display: inline-block;
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+      li:hover {
+        color: rgba(0, 0, 0, 0.45);
+      }
+      .userinfo {
+        display: flex;
+        align-items: center;
+        .img {
+          width: 15px;
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+}
