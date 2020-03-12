@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Form, Menu, Dropdown } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
 import SelfModal from 'component/SelfModal'
-import { userRegister, userLogin, getUserInfo } from 'service/user'
+import { userRegister, userLogin, getUserInfo, getUserByUsername } from 'service/user'
 import { RootState } from 'store/index'
 import { updateUserInfo, deleteUserInfo } from 'store/userInfo/actions'
 import './index.less'
@@ -41,10 +41,13 @@ const Header = () => {
           dispath(updateUserInfo({
             ...data
           }))
+          const baseInfo = await getUserByUsername({ username }) as any
+          const { id } = baseInfo
           const info = await getUserInfo({ username })
           dispath(updateUserInfo({
             ...info,
-            ...data
+            ...data,
+            id
           }))
           setIsLogin(true)
         }
