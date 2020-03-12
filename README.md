@@ -6,6 +6,15 @@
 前端是 create-react-app 构架，项目基本目录都是一样的，
 技术栈是基于 **React Hooks + Redux + Typescript** 实现，利用了 Ant-Design 的部分组件。
 
+
+- [后台传送门](https://github.com/ningyq/o2o)
+- 当前项目请求地址为服务器的地址，如果需要请求本地 JAV 后台地址，只需要修改项目根目录下 .env.development 文件的 REACT_APP_API_HOST
+
+```
+REACT_APP_API_HOST=//47.94.213.70:8088
+```
+
+
 ### 安装 & 运行
 - 首先你需要安装 node，装好之后 node 自带 npm
 - 装好之后终端进入项目主目录，然后执行下面的两个步骤：

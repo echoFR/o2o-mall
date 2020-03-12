@@ -53,7 +53,10 @@ const UserInfo = () => {
         Object.keys(formItems).map((key: string) => {
           const label = formItems[key]
           const placeholder = `请输入${label}`
-          let Item = <Input placeholder={placeholder} />
+          let Item = <Input
+            placeholder={placeholder}
+            readOnly={key === 'username' ? true : false}
+          />
           if (key === 'sex') {
             const sexObj: any = { '女': 1, '男': 0 }
             Item = (<Radio.Group buttonStyle='solid'>
