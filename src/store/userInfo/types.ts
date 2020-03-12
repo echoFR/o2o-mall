@@ -8,6 +8,7 @@ export interface userInfoType {
   birthday?: string,
   phone?: string,
   address?: string,
+  // 非 info 信息
   token?: string,
   isAdmin?: boolean
 }

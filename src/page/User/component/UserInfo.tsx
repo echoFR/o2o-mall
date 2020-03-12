@@ -90,6 +90,7 @@ const UserInfo = () => {
       const formatDate = birthday
         ? moment(birthday).format('YYYY-MM-DD')
         : birthday
+      const { token, isAdmin } = userInfo
       const newInfo = {
         id: infoId,
         username,
@@ -103,8 +104,14 @@ const UserInfo = () => {
       dispath(updateUserInfoAction({
         ...newInfo,
         id: info.id,
-        infoId: info.infoId
+        infoId: info.infoId,
+        isAdmin,
+        token
       }))
+      Message({
+        type: 'success',
+        msg: '用户信息修改成功'
+      })
     })
   }
 
