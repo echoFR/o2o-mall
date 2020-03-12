@@ -4,8 +4,9 @@ import moment from 'moment'
 import Message from 'component/Message'
 import { updateUserInfo } from 'service/user'
 import './index.less'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from 'store/index'
+import { updateUserInfo as updateUserInfoAction } from 'store/userInfo/actions'
 const formItems: any = {
   username: '昵称',
   sex: '性别',
@@ -19,6 +20,7 @@ const formItemLayout = {
   wrapperCol: { span: 10 },
 }
 const UserInfo = () => {
+  const dispath = useDispatch()
   const [form] = Form.useForm()
   const [info, setInfo] = useState<any>({})
   const userInfo = useSelector((state: RootState) => {
@@ -78,7 +80,7 @@ const UserInfo = () => {
   // 修改信息
   const saveInfo = () => {
     form.validateFields().then(async (values) => {
-      const { id } = info
+      const { infoId } = info
       const { birthday, username, sex, phone, name, address } = values
       if (!username) {
         Message({
@@ -88,15 +90,21 @@ const UserInfo = () => {
       const formatDate = birthday
         ? moment(birthday).format('YYYY-MM-DD')
         : birthday
-      await updateUserInfo({
-        id,
+      const newInfo = {
+        id: infoId,
         username,
         name,
         sex,
         birthday: formatDate,
         phone,
         address
-      })
+      }
+      await updateUserInfo(newInfo)
+      dispath(updateUserInfoAction({
+        ...newInfo,
+        id: info.id,
+        infoId: info.infoId
+      }))
     })
   }
 

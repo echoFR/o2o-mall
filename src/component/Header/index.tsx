@@ -43,11 +43,13 @@ const Header = () => {
           }))
           const baseInfo = await getUserByUsername({ username }) as any
           const { id } = baseInfo
-          const info = await getUserInfo({ username })
+          const info = await getUserInfo({ username }) as any
+          const { id: infoId } = info
           dispath(updateUserInfo({
             ...info,
             ...data,
-            id
+            id, // user 表 ID
+            infoId, // info 表 ID
           }))
           setIsLogin(true)
         }

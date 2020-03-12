@@ -1,6 +1,7 @@
 // State
 export interface userInfoType {
   id?: number,
+  infoId?: number,
   username?: string,
   name?: string,
   sex?: 0 | 1,
